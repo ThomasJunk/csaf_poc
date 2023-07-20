@@ -1,38 +1,34 @@
-# create-svelte
+<!--
+ This file is Free Software under the MIT License
+ without warranty, see README.md and LICENSES/MIT.txt for details.
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+ SPDX-License-Identifier: MIT
 
-## Creating a project
+ SPDX-FileCopyrightText: 2023 German Federal Office for Information Security (BSI) <https://www.bsi.bund.de>
+ Software-Engineering: 2023 Intevation GmbH <https://intevation.de
+-->
+# Webview+
 
-If you're seeing this, you've probably already done this step. Congrats!
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+![](docs/app.png)
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+## Development
 
-## Developing
+### Clone the repo
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+```git clone https://github.com/csaf-poc/csaf_webview.git```
 
-```bash
-npm run dev
+### `cd` into app directory
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+```cd csaf_webview```
 
-## Building
+### Install dependencies
 
-To create a production version of your app:
+```npm install```
 
-```bash
-npm run build
-```
+### Run development server and `--open` a browser.
 
-You can preview the production build with `npm run preview`.
+```npm run dev -- --open```
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+### Drag a valid csaf-file over the `dropzone`.
