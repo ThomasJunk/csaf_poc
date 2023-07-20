@@ -7,14 +7,13 @@
  SPDX-FileCopyrightText: 2023 German Federal Office for Information Security (BSI) <https://www.bsi.bund.de>
  Software-Engineering: 2023 Intevation GmbH <https://intevation.de
 -->
-<script>
+<script lang="ts">
 	import Maincard from '$lib/Maincard.svelte';
 	import Droparea from '$lib/Droparea.svelte';
 	import 'chota/dist/chota.min.css';
 	import 'boxicons/css/boxicons.min.css';
 
-	// @ts-ignore
-	const disable = (e) => {
+	const disable = (e: any) => {
 		e.preventDefault();
 	};
 </script>

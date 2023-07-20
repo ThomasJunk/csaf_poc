@@ -8,8 +8,12 @@
 
 import { writable } from "svelte/store";
 
+type AppStore = {
+	data: any
+}
+
 function createStore() {
-	const appDefault = {
+	const appDefault: AppStore = {
 		data: null
 	};
 	const { subscribe, set, update } = writable(appDefault);

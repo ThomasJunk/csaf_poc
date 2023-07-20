@@ -7,11 +7,10 @@
  SPDX-FileCopyrightText: 2023 German Federal Office for Information Security (BSI) <https://www.bsi.bund.de>
  Software-Engineering: 2023 Intevation GmbH <https://intevation.de
 -->
-<script>
+<script lang="ts">
 	import { appStore } from './store';
-	let tlpStyle = '';
-	// @ts-ignore
-	const formatDate = (d) => {
+	let tlpStyle: string = '';
+	const formatDate = (d: string) => {
 		if (d === '') return '';
 		let [date, _] = d.split('T');
 		return date;
@@ -20,7 +19,6 @@
 	$: lang = $appStore.data ? $appStore.data['document']['lang'] : '';
 	$: csafVersion = $appStore.data ? $appStore.data['document']['csaf_version'] : '';
 	$: tlp = $appStore.data ? $appStore.data['document']['distribution']['tlp']['label'] : '';
-	// @ts-ignore
 	$: if (tlp === 'WHITE') tlpStyle = 'tlpclear';
 	$: id = $appStore.data ? $appStore.data['document']['tracking']['id'] : '';
 	$: status = $appStore.data ? $appStore.data['document']['tracking']['status'] : '';

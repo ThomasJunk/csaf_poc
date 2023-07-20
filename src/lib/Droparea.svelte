@@ -7,15 +7,14 @@
  SPDX-FileCopyrightText: 2023 German Federal Office for Information Security (BSI) <https://www.bsi.bund.de>
  Software-Engineering: 2023 Intevation GmbH <https://intevation.de
 -->
-<script>
+<script lang="ts">
 	import { appStore } from './store';
-	let hover = false;
-	/** @type {any}*/
-	let valid = null;
-	let text = 'Drop your CSAF-file here';
-	const fileDropped = (/** @type {any}*/ e) => {
-		const csafFile = e.dataTransfer.files[0];
-		const type = csafFile.type;
+	let hover: boolean = false;
+	let valid: boolean | null = null;
+	let text: string = 'Drop your CSAF-file here';
+	const fileDropped = (e: any) => {
+		const csafFile: File = e.dataTransfer.files[0];
+		const type: string = csafFile.type;
 		if (type == 'application/json') {
 			valid = true;
 			text = `Displaying file "${csafFile.name}".`;
@@ -26,12 +25,11 @@
 			appStore.setData('');
 		}
 	};
-	const readFile = (/** @type {any}*/ csafFile) => {
-		const fileReader = new FileReader();
+	const readFile = (csafFile: any) => {
+		const fileReader: FileReader = new FileReader();
 		fileReader.onload = (e) => {
 			if (e.target) {
-				// @ts-ignore
-				const jsonDocument = JSON.parse(e.target.result);
+				const jsonDocument = JSON.parse(e.target.result as string);
 				appStore.setData(jsonDocument);
 			}
 		};
