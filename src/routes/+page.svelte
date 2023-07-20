@@ -10,6 +10,8 @@
 <script>
 	import Maincard from '$lib/Maincard.svelte';
 	import Droparea from '$lib/Droparea.svelte';
+	import 'chota/dist/chota.min.css';
+	import 'boxicons/css/boxicons.min.css';
 
 	// @ts-ignore
 	const disable = (e) => {
