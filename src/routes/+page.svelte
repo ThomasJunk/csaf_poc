@@ -13,7 +13,7 @@
 	import 'chota/dist/chota.min.css';
 	import 'boxicons/css/boxicons.min.css';
 
-	const disable = (e: any) => {
+	const disable = (e: Event) => {
 		e.preventDefault();
 	};
 </script>

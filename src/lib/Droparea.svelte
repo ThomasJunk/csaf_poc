@@ -12,20 +12,22 @@
 	let hover: boolean = false;
 	let valid: boolean | null = null;
 	let text: string = 'Drop your CSAF-file here';
-	const fileDropped = (e: any) => {
-		const csafFile: File = e.dataTransfer.files[0];
-		const type: string = csafFile.type;
-		if (type == 'application/json') {
-			valid = true;
-			text = `Displaying file "${csafFile.name}".`;
-			readFile(csafFile);
-		} else {
-			text = `File "${csafFile.name}" has an invalid format.`;
-			valid = false;
-			appStore.setData('');
+	const fileDropped = (e: DragEvent) => {
+		if (e.dataTransfer) {
+			const csafFile: File = e.dataTransfer.files[0];
+			const type: string = csafFile.type;
+			if (type == 'application/json') {
+				valid = true;
+				text = `Displaying file "${csafFile.name}".`;
+				readFile(csafFile);
+			} else {
+				text = `File "${csafFile.name}" has an invalid format.`;
+				valid = false;
+				appStore.setData('');
+			}
 		}
 	};
-	const readFile = (csafFile: any) => {
+	const readFile = (csafFile: File) => {
 		const fileReader: FileReader = new FileReader();
 		fileReader.onload = (e) => {
 			if (e.target) {
